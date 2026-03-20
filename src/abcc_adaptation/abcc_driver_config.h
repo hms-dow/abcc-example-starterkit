@@ -59,6 +59,10 @@
 #define ABCC_CFG_MAX_NUM_ABCC_CMDS                 ( 4 )
 #define ABCC_CFG_MAX_PROCESS_DATA_SIZE             ( 4096 )
 
+#define ABCC_CFG_SPI_DYNAMIC_MSG_FRAG_LEN          1
+#define ABCC_CFG_SPI_MAX_MSG_FRAG_LEN              ( 1536 )
+#define ABCC_CFG_SPI_MIN_MSG_FRAG_LEN              ( 16 )
+#define ABCC_CFG_SPI_DEFAULT_MSG_FRAG_LEN          ( 32 )
 /*------------------------------------------------------------------------------
 ** Interrupt configuration excluding sync
 **------------------------------------------------------------------------------
