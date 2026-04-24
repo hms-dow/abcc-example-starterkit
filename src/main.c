@@ -249,7 +249,7 @@ void FwUpdateDeleteCallback( UINT16 iInstance, ABP_MsgErrorCodeType eMsgResult, 
       ABCC_PORT_DebugPrint( ( "Process completed\n" ) );
 
       appl_iFragSize = ABCC_CFG_SPI_DEFAULT_MSG_FRAG_LEN;
-      ABCC_NewMsgFragSize( appl_iFragSize );
+      ABCC_SetMsgFragSize( appl_iFragSize );
       appl_iFwUpdateInstance = 0xFFFF;
       appl_fFileWriteOngoing = FALSE;
    }
@@ -332,7 +332,7 @@ void FwUpdateFileWriteCallback( UINT16 iInstance, ABP_MsgErrorCodeType eMsgResul
             }
          }
 
-         ABCC_API_NewMsgFragSize( appl_iFragSize );
+         ABCC_API_SetMsgFragSize( appl_iFragSize );
          //EXTFUNC ABCC_ErrorCodeType ANB_FSI_FileWrite( UINT16 iInstance, UINT8* pbSrc, UINT16 iReqSize, UINT16* piActSize, ANB_FSI_CompletionCbfType pnCallback );
          ABCC_PORT_DebugPrint( ( "ANB_FSI_FileWrite() Result: %i:\n",
             ANB_FSI_FileWrite( appl_iFwUpdateInstance, appl_abDummyData, 1524, &appl_iWrittenSize, FwUpdateFileWriteCallback ) ) );
